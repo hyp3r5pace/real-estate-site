@@ -1,0 +1,4 @@
+To understand the flow of the customer section, start with index.html.
+And then just follow the flow.
+
+In search page, fill random value in required input sections and the click search.
