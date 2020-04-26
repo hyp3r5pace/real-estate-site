@@ -1,0 +1,33 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Property Landing Page
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    // partial:index.partial.html
+    section#background.wrapper
+      section.container
+        .header
+          .logo
+            img(src='https://a-v2.sndcdn.com/assets/images/header/cloud-e365a4.png', alt='soundcloud logo', height='20px', width='auto')
+            img(src='https://a-v2.sndcdn.com/assets/images/header/wordmark-d95b0a.png', alt='')
+          .login
+            button.btn.btn-3
+              span
+                a(href='signIn', target='_self') Sign in
+            button.btn-2
+              span
+                a(href='signUp', target='_self') Create account
+        section.hero-container
+          .text-block
+            h1.header1 Home Sweet Home
+            h3
+              | Buy the house of your choice
+              br
+              | and make it your home
+            p Get the house of your dreams which suit your budget
+          .call-to-action
+            button.btn.btn-3 Learn more
+          section
+        // partial

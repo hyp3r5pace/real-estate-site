@@ -1,0 +1,58 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Search
+    link(rel='stylesheet', href='/stylesheets/search-style.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  body
+    // partial:index.partial.html
+    .container
+      header.header
+        h1#title.text-center(style='color: Black') Hii, #{name}      
+        h1#title.text-center Search
+        p#description.description.text-center
+          | Search the home of your dreams!
+      form#survey-form(action='/signIn/search', method='POST')
+        h2(style='color: red') #{error}
+        .form-group
+          label#name-label(for='city') City
+          input#city.form-control(type='text', name='city', placeholder='Enter City Name', required='')
+        .form-group
+          label#pincode-label(for='pincode') Pincode
+          input#pincode.form-control(type='text', name='Pincode', placeholder='Pincode', required='')
+        .form-group
+          label#number-label(for='budget') Budget
+          input#budget.form-control(type='number', name='budget', min='0', placeholder='Budget', required='')
+        .form-group
+          p Number of Rooms?
+          select#dropdown.form-control(name='room', required='')
+            option(disabled='', selected='', value=0) Select Number of rooms
+            option(value=1) 1 BHK
+            option(value=2) 2 BHK
+            option(value=3) 3 BHK
+            option(value=4) More than 3 BHK
+            option(value=-1) Have not decided yet
+        .form-group
+          p Would you like to buy or rent?
+          label
+            input.input-radio(name='status', value='YES', type='radio', checked='')
+            | Buy
+          label
+            input.input-radio(name='status', value='NO', type='radio')
+            | Rent
+        .form-group
+          label#prop-label(for='prop-name')
+            | Property Name
+            span.clue (Optional)
+          input#prop-name.form-control(type='text', name='property', placeholder='Enter House/Flat name')
+        .form-group
+          label#agent-name(for='agent-name')
+            | Agent Name
+            span.clue (Optional)
+          input#agent-name.form-control(type='text', name='Agent', placeholder='Enter House/Flat name')
+        .form-group
+          button#submit.submit-button(type='submit')
+            | Search 
+            i.fa.fa-search
+    // partial

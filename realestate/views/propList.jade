@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Property List
+    link(rel='stylesheet', href='/stylesheets/prop-list-style.css')
+  body
+    // partial:index.partial.html  https://picsum.photos/500/300/?image=10
+    .main
+      h1(data-text='Property List') Property List
+      - var prop = props
+         ul.cards
+             for pip in prop
+                li.cards_item
+                    .card
+                        .card_image
+                            img(src='https://picsum.photos/500/300/?image=10')
+                        .card_content
+                            h2.card_title #{pip.House_Name}
+                            p.card_text #{pip.no_of_rooms} BHK
+                            p.card_text Price: #{pip.Cost}
+                            a(href='/signIn/readMore?id=#{pip.PropertyId}')
+                                button.btn.card_btn Find Out More
+             else 
+                h2 No such property exist
+    // partial

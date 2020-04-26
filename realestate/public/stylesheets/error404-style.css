@@ -1,0 +1,126 @@
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:200,400,500,600,700|Monoton|Plaster);
+body {
+  background-color: black;
+  color: white;
+  margin: 0;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5 {
+  cursor: default;
+}
+
+.hypertube {
+  font-family: 'Plaster', cursive;
+  color: #E59500;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+.not-found {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.not-found .error {
+  transition: all .5s;
+  font-size: 200px;
+  margin-bottom: 5px;
+}
+.not-found h2 {
+  transition: all .5s;
+  color: #E59500;
+  margin: 0;
+}
+.not-found h3 {
+  cursor: pointer;
+  color: #454545;
+  transition: all .5s;
+  margin: 40px;
+}
+.not-found h3:hover {
+  color: #E59500;
+}
+
+@media screen and (max-width: 800px) {
+  .not-found .error {
+    font-size: 150px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .not-found .error {
+    font-size: 100px;
+  }
+}
+
+h2 {
+  font-size: 30px;
+  margin-top: 0px;
+}
+
+.draw-border {
+  box-shadow: inset 0 0 0 4px #58afd1;
+  color: #58afd1;
+  -webkit-transition: color 0.25s 0.0833333333s;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+.draw-border::before, .draw-border::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+.draw-border::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+.draw-border::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+.draw-border:hover {
+  color: #ffe593;
+}
+.draw-border:hover::before, .draw-border:hover::after {
+  border-color: #ffe593;
+  -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+.draw-border:hover::before {
+  -webkit-transition-delay: 0s, 0s, 0.25s;
+          transition-delay: 0s, 0s, 0.25s;
+}
+.draw-border:hover::after {
+  -webkit-transition-delay: 0s, 0.25s, 0s;
+          transition-delay: 0s, 0.25s, 0s;
+}
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font: 700 1.2rem 'Roboto Slab', sans-serif;
+  padding: 1em 2em;
+  letter-spacing: 0.05rem;
+}
+.btn:focus {
+  outline: 2px dotted #55d7dc;
+}

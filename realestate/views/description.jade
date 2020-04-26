@@ -1,0 +1,32 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Description of property
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
+    link(rel='stylesheet', href='/stylesheets/description-style.css')
+  body
+    // partial:index.partial.html
+    .parallax.bg-1
+      .container
+    .scrolled
+      .container
+        h1 #{house}
+        .Description
+          h4 Description
+          p #{description}
+          br
+          .contain
+            h5.price
+              | Price:   
+              span.price-value #{cost}
+          h5.location
+            | Location:   
+            span.location-value #{street}, #{city}
+          h5.agentinfo Agent Contact info:
+          h6.contact-info
+          h6.email Name: #{name}
+          h6.phone Phone Number:   #{phone}
+          h6.email Email: #{email}
+          a
+    // partial

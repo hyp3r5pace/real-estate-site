@@ -1,0 +1,29 @@
+{
+  "name": "realestate",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npx nodemon ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "*",
+    "morgan": "~1.9.1",
+    "nodemailer": "*",
+    "mysql": "*",
+    "nodemon": "^2.0.3",
+    "serve-favicon": "*",
+    "connect-flash": "*",
+    "express-validator": "*",
+    "express-session": "*",
+    "express-messages": "*",
+    "passport": "*",
+    "passport-local": "*",
+    "passport-http": "*",
+    "multer": "*"
+  }
+}

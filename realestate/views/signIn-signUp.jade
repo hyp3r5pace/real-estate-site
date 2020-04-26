@@ -1,0 +1,45 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Login/Signup Page
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css')
+    link(rel='stylesheet', href='/stylesheets/signIn-signUp-style.css')
+  body
+    // partial:index.partial.html
+    #container.container
+      #Sign-up.form-container.sign-up-container
+        form#signup(action='/signUp/register', method='POST')
+          h1.account Create Account
+          span use your email for registration
+          br
+          input(type='text', placeholder='Name', name='Name', required='')
+          input(type='email', placeholder='Email', name='Email', required='')
+          input(type='password', placeholder='Password', name='Password', required='')
+          input(type='password', placeholder='Confirm Password', name='Password2', required='')
+          button.signup(type='submit') Sign Up
+      .form-container.sign-in-container
+        form#signin(action='/signIn/login', method='POST')
+          h1.account Sign in
+          span use your account
+          br
+          input#Email(type='email', placeholder='Email', name='Email', required='')
+          input#Password(type='password', placeholder='Password', name='Password', required='')
+          a.forgot-password(href='/forgotPassword') Forgot your password?
+          button(type='submit') Sign In
+          h4(style='color: red') #{error}
+          h4(style='color: green') #{success}
+      .overlay-container
+        .overlay
+          .overlay-panel.overlay-left
+            h1 Welcome Back!
+            p To keep connected with us please login with your personal info
+            button#signIn.ghost Sign In
+          .overlay-panel.overlay-right
+            h1 Hello, Friend!
+            p Enter your personal details and start journey with us
+            button#signUp.ghost Sign Up
+            h4(style='color:red') #{error1}
+            h4(style='color: green') #{success1}
+    // partial
+    script(src='/javascripts/script.js')
