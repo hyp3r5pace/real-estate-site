@@ -1,0 +1,184 @@
+/*needed code*/
+
+.parallax {
+    /* Specified height */
+    height: 100vh;
+    /* Fix element and background settings*/
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .parallax.bg-1 {
+    /* Image */
+   
+    
+  }
+  .parallax.bg-2 {
+    min-height: 500px;
+  }
+  
+  h1{
+    margin-top: 30px;
+    text-align: center;
+    background: linear-gradient(60deg,#ff0066,#000066,#B22222,#FFD700);
+      background-attachment: fixed;
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent
+    
+  }
+  
+  h4{
+    color: white  ;
+    text-align: center;
+    
+  }
+  
+  .Description{
+      background: #fff;
+      border-radius: 2px; 
+      position: relative;
+      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+      padding-top: 0.9px;
+      background-color: #eb4559;
+      padding-bottom: 5px;
+  }
+  
+  .Description1{
+    background: #fff;
+    border-radius: 2px; 
+    position: relative;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    background-color: #eb4559;
+  
+  }
+  
+  h5{
+    text-align: left;
+    font-size: 30px;
+    position: relative;
+    margin-left: 16px;
+  }
+  
+  .phone{
+    line-height: 0px;
+    margin-left: 16px;
+  }
+  
+  .email{
+    line-height: 0px;
+    margin-left: 16px;
+  }
+  
+  p{
+    color: white;
+    letter-spacing: 0.01rem;
+    font-size: 21px;
+    text-align: justify;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  
+  /*scolled block*/
+  .scrolled {
+    height: 330px;
+    position: relative;
+  }
+  
+  .container {
+    position: relative;
+  }
+  
+  .container1{
+    position: relative;
+    margin-left: 39px;
+    margin-right: 39px;
+    margin-top: 20px; 
+  }
+  
+  /* goldplating */
+  body {
+    color: white;
+    font-size: 36px;
+    font-family: Verdana;
+  }
+  body .parallax {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
+  }
+  body .parallax .container {
+    -webkit-box-pack: center;
+            justify-content: center;
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+  }
+  body .scrolled {
+    background-color: white;
+  }
+  body .container {
+    padding: 40px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .draw-border {
+    box-shadow: inset 0 0 0 4px #58afd1;
+    color: #58afd1;
+    -webkit-transition: color 0.25s 0.0833333333s;
+    transition: color 0.25s 0.0833333333s;
+    position: relative;
+  }
+  .draw-border::before, .draw-border::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: 0;
+  }
+  .draw-border::before {
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+  }
+  .draw-border::after {
+    border-top-width: 4px;
+    border-right-width: 4px;
+  }
+  .draw-border:hover {
+    color: #ffe593;
+  }
+  .draw-border:hover::before, .draw-border:hover::after {
+    border-color: #ffe593;
+    -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
+    transition: border-color 0s, width 0.25s, height 0.25s;
+    width: 100%;
+    height: 100%;
+  }
+  .draw-border:hover::before {
+    -webkit-transition-delay: 0s, 0s, 0.25s;
+            transition-delay: 0s, 0s, 0.25s;
+  }
+  .draw-border:hover::after {
+    -webkit-transition-delay: 0s, 0.25s, 0s;
+            transition-delay: 0s, 0.25s, 0s;
+  }
+  
+  .btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1.5;
+    font: 700 1.2rem 'Roboto Slab', sans-serif;
+    padding: 1em 2em;
+    letter-spacing: 0.05rem;
+  }
+  .btn:focus {
+    outline: 2px dotted #55d7dc;
+  }
+  

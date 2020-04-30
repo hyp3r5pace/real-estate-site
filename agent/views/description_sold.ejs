@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Description of property</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="stylesheets/description.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="parallax bg-1" style="background-image: url(<%=data[0].image_link%>);max-height: 600px;">
+  <div class="container">
+  </div>
+</div>
+
+<div class="scrolled">
+  <div class="container">
+    <h1><%=data[0].House_Name%></h1>
+    <div class="Description">
+    <br>
+    <div class="contain">
+    <h5 class="price">Price:<span class="price-value"><%=data[0].Cost%></span></h5>
+    </div>
+    <h5 class="size">Size of the house<%=data[0].size%></h5>
+    <h5 class="location">Location:<span class="location-value"><%=data[0].Street_Name%>,<%=data[0].City%></span></h5>
+    <h5 class="pincode">Pincode:<span class="location-value"><%=data[0].Pincode%></span></h5>
+    <% if(data[0].IsSold=="YES") { %>
+     <h5>STATUS:Property has been sold</h5>
+     <%} else{ %>
+    <h5>STATUS:Property is on rent</h5>   
+    <% } %>
+    <% if(data[0].IsSold=="YES") { %>
+    <h4 class="agentinfo"><b>Customer Contact info to whom the property was sold:</b></h4>
+    <%} else{ %>
+    <h4 class="agentinfo"><b>Customer Contact info to whom the property has been given rent on:</b></h4>
+     <% } %>
+    <h5 class="contact-info"></h5>
+    <h5 class="Customer Id">Customer Id:<%=data[0].C_Id%></h5>
+    <h5 class="phone">Phone Number: <%=data[0].C_Mobile_No%></h5>
+    <h5 class="email">Name:<%=data[0].C_Name%></h5>
+    <a></a>
+  </div> 
+  </div>
+</div>
+<!-- partial -->
+  
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-------------------------------connecting to meta----------------------------------->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <!--connecting to stylesheet-->
+        <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--connecting to bootstrap-->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <link href="stylesheets/search-style.css" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <title>
+            PROPERTY 
+        </title>
+    </head>
+    <body style="background-image:url('images/property.jpg');background-repeat: no-repeat;background-position:100%;background-size:cover;height: 120vh;">
+        <div class="container">
+        <header>
+            <h1 style="text-align:center;font-family: 'Pacifico', cursive;size:150px">Fill Property Information</h1>
+        </header>
+        <main style="margin-top: 50px;">
+            <form id="survey-form" enctype="multipart/form-data" action="/submit_prop" method="POST"  style="background-color: rgba(17, 17, 17);margin-left:25%;padding:5% 5%;opacity:0.9;width:600px">
+                <div class="form-group">
+                  <label id="name-label" for="city" style="color:cornsilk">City</label>
+                  <input
+                    type="text"
+                    name="city"
+                    id="city"
+                    class="form-control"
+                    placeholder="Enter City Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                <label id="name-label" for="StreetName" style="color:cornsilk">Street Name</label>
+                  <input
+                    type="text"
+                    name="streetName"
+                    id="street name"
+                    class="form-control"
+                    placeholder="Enter Street Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                <label id="name-label" for="HouseName" style="color:cornsilk">House Name</label>
+                  <input
+                    type="text"
+                    name="houseName"
+                    id="houseName"
+                    class="form-control"
+                    placeholder="Enter House Name"
+                    required
+                  />
+                </div>
+            
+                <div class="form-group">
+                    <label id="pincode-label" for="pincode"style="color:cornsilk"
+                      >Pincode</label>
+                    <input
+                      type="text"
+                      name="Pincode"
+                      id="pincode"
+                      class="form-control"
+                      placeholder="Pincode"
+                      required
+                    />
+                  </div>
+            
+                <div class="form-group">
+                  <label id="number-label" for="cost" style="color:cornsilk"
+                    >Cost</label>
+                  <input
+                    type="number"
+                    name="cost"
+                    id="Cost"
+                    min="0"
+                    class="form-control"
+                    placeholder="Cost"
+                    required
+                  />
+                  <div class="form-group">
+                    <label id="number-label" for="floor" style="color:cornsilk"
+                      >Floor</label>
+                    <input
+                      type="number"
+                      name="floor"
+                      id="floor"
+                      min="0"
+                      class="form-control"
+                      placeholder="floor no."
+                      required
+                    />
+                </div>
+                <div class="form-group">
+                  <label id="number-label" for="floor" style="color:cornsilk"
+                    >No. Of Bedrooms(In BHK) </label>
+                  <input
+                    type="number"
+                    name="no_of_rooms"
+                    id="no_of_rooms"
+                    min="0"
+                    class="form-control"
+                    placeholder="enter no. of rooms in BHK(just number)"
+                    required
+                  />
+                  <div class="form-group">
+                    <label id="number-label" for="cost" style="color:cornsilk"
+                      >Size of the house in (sq feet)</label>
+                    <input
+                      type="number"
+                      name="size"
+                      id="size"
+                      min="0"
+                      class="form-control"
+                      placeholder="enter the size of the property(in square feet)"
+                      required
+                    />
+              </div>
+            
+                <div class="form-group" style="color:cornsilk">
+                  <p>Would you like to sell or rent it?</p>
+                  <label>
+                    <input
+                      name="sell_or_rent"
+                      value="sell"
+                      type="radio"
+                      class="input-radio"
+                      checked
+                    />Sell</label
+                  >
+                  <label>
+                    <input
+                      name="sell_or_rent"
+                      value="Rent"
+                      type="radio"
+                      class="input-radio"
+                    />Rent</label
+                  >
+                </div>
+                <div class="form-group">
+                    <label id="description-label" for="city" style="color:cornsilk">Description</label>
+                    <input
+                      type="text"
+                      name="description"
+                      id="description"
+                      class="form-control"
+                      placeholder="Enter Description Of the Property"
+                      required
+                     />
+                </div>
+                <div class="form-group" >
+                  <label for="listing Date" style="color:cornsilk">Date of Listing:</label>
+                  <input type="date" id="Listing_Date" style="color:black;" name="ListingDate" required>
+                </div>
+                <div class="form-group">
+                  <lable id="image_link" for="image" style="color:cornsilk">Upload Image Of the Property</lable>
+                  <input
+                  type="file"
+                  name="image_link"
+                  required
+                  />
+                </div>
+                <div class="form-group" style="color:cornsilk">
+                  <button type="submit" id="submit" class="submit-button" >
+                    SUBMIT THE ABOVE ENTRIES
+                  </button>
+                </div>
+              </form>
+        </main>
+        </div>
+    </body>
+</html>

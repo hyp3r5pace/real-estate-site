@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Property List</title>
+  <link rel="stylesheet" href="stylesheets/prop-list-style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html  https://picsum.photos/500/300/?image=10-->
+<div class="main">
+  <h1 data-text="Property List">Property List Of Your Listed Properties Which You Want to Delete</h1>
+  <ul class="cards">
+    <% for(var i of data) { %>
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_image"><%=i.House_name%><img src="<%=i.image_link%>"  style="height:350px;width: 400px;"></div>
+        <div class="card_content">
+          <h2 class="card_title"></h2>
+          <p class="card_text">No.Of Rooms: <%=i.no_of_rooms%>BHK</p>
+          <p class="card_text">Price: <%=i.Cost%></p>
+          <a href="/delete_confirm?id=<%-i.PropertyId%>" style="color: aliceblue;text-decoration:none"><button class="btn card_btn">Delete This Property</button></a>
+        </div>
+      </div>
+    </li>
+    <% } %>
+  </ul>
+</div>
+<!-- partial -->
+  
+</body>
+</html>

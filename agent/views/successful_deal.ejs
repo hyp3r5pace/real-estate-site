@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="stylesheets/search-style.css" rel="stylesheet"> 
+        <title>Successful deal</title>
+    </head>
+    <body style="background-image: url('images/deal_2.jpg');background-repeat: no-repeat;background-position:100%;background-size:cover;height: 120vh;">
+        <h1 style="text-align:center;color:black;">DEAL for the property <%=data[0].House_Name%> and property ID:<%=data[0].PropertyId%></h1>
+        <div style="margin-top: 50px;margin-left:7.5%">
+            <form id="survey-form" action="/deal_completed?id=<%-data[0].PropertyId%>" method="POST"  style="background-color: rgba(17, 17, 17);margin-left:25%;padding:5% 5%;opacity:0.9;width:600px">
+                <div class="form-group">
+                    <label id="name-label" for="C_Id" style="color:cornsilk">Enter Email-Id Of the Customer</label>
+                    <input
+                      type="text"
+                      name="Email_id"
+                      id="Email_Id"
+                      class="form-control"
+                      placeholder="Enter Customer's Email Ids"
+                      required
+                    />
+                </div>  
+                <div class="form-group">
+                    <label id="name-label" for="name" style="color:cornsilk">Enter name of the customer</label>
+                    <input
+                      type="text"
+                      name="cname"
+                      id="cname"
+                      class="form-control"
+                      placeholder="Enter name of the customer"
+                      required
+                    />
+                </div>
+                <div class="form-group">
+                    <label id="name-label" for="aid" style="color:cornsilk">Enter your Agent Id for confirmation</label>
+                    <input
+                      type="number"
+                      name="A_Id"
+                      id="A_Id"
+                      class="form-control"
+                      placeholder="Enter Agent ID"
+                      required
+                    />
+                </div>
+                <div class="form-group">
+                    <label id="date-label" for="sold_date" style="color:cornsilk">Enter the Sold date</label>
+                    <input
+                      type="date"
+                      name="sold_date"
+                      id="sold_date"
+                      class="form-control"
+                      placeholder="sold_date"
+                      required
+                    />
+                </div>
+                <div class="form-group" style="color:cornsilk">
+                    <button type="submit" id="submit" class="submit-button">
+                      CONFIRM
+                    </button>
+                  </div>   
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-------------------------------connecting to meta----------------------------------->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <!--connecting to stylesheet-->
+        <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--connecting to bootstrap-->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <link href="stylesheets/search-style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <title>
+            Edit_Profile  
+        </title>
+    </head>
+    <body style="background-image:url('images/bak.jpg');background-repeat: no-repeat;background-position:100%;background-size:cover;height: 120vh;">
+        <div class="container">
+        <header>
+            <h1 style="text-align:center;font-family: 'Pacifico', cursive;size:150px">Update Your Profile</h1>
+        </header>
+        <main style="margin-top: 50px;">
+            <form id="survey-form" action="updated_profile" method="POST"  style="background-color: rgba(17, 17, 17);margin-left:25%;opacity:0.9;">
+              <div class="form-group">
+                  <label id="name-label" for="city" style="color:cornsilk">Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    class="form-control"
+                    placeholder="<%=data[0].A_Name%>"
+                   
+                  />
+                </div>
+                 <div class="form-group">
+                  <label id="email-label" for="city" style="color:cornsilk">E-Mail Id</label>
+                  <input
+                    type="text"
+                    name="Email_Id"
+                    id="Email_Id"
+                    class="form-control"
+                    placeholder="<%=data[0].A_Email_Id%>"
+                   
+                  />
+                 </div>                      
+                <div class="form-group">
+                  <label id="mobile-number-label" for="MobileNumber" style="color:cornsilk"
+                    >Mobile NO.</label>
+                  <input
+                    type="number"
+                    name="MobileNum"
+                    id="Mobile Number"
+                    min="0"
+                    class="form-control"
+                    placeholder="<%=data[0].A_MobileNo%>"
+                  />
+                </div>
+                <div class="form-group">
+                  <label id="password" for="password" style="color:cornsilk"
+                    >Update your Password</label>
+                  <input
+                    type="password"
+                    name="Password"
+                    id="password"
+                    class="form-control"
+                    placeholder="<%=data[0].A_Password%>"
+                  />
+                </div>
+                <div class="form-group" style="color:cornsilk">
+                  <button type="submit" id="submit" class="submit-button">
+                    Save 
+                  </button>
+                </div>
+              </form>
+              <form id="survey-form"  enctype="multipart/form-data" action="/upload_photo" method="POST" style="background-color: rgba(17, 17, 17);margin-left:25%;opacity:0.9;">
+                <div class="form-group">
+                  <label id="description-label" for="image" style="color:cornsilk">Upload/Update Profile Image</label>
+                  <input
+                    type="file"
+                    name="Image_upload"
+                    id="Image_upload"
+                  />
+                </div>
+                <div class="form-group" style="color:cornsilk">
+                  <button type="submit" id="upload" class="submit-button">
+                    UPLOAD
+                  </button>
+                </div>
+              </form>
+        </main>
+        </div>
+    </body>
+</html>
