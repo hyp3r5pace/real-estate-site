@@ -1,0 +1,84 @@
+/* Put your CSS code in the left column, instead of example, to put or remove unnecessary prefixes. */
+.example {
+    display: -webkit-box;
+    display: flex;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: -webkit-gradient(linear, left top, left bottom, from(white), to(black));
+    background: linear-gradient(to bottom, white, black);
+  }
+
+  .like-button {
+      float: right;
+  }
+  
+  .like-button:hover {
+    cursor: pointer;
+    color: #cd0928;
+  }
+  
+  .like-button.not-liked {
+    color: #000;
+  }
+  
+  .like-button.not-liked:hover {
+    color: #cd0928;
+  }
+  
+  .like-button.liked {
+    color: #cd0928;
+  }
+  
+  .like-button.liked-shaked {
+    -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    -webkit-transform: translate3d(0, 0, 0) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+  }
+  
+  @-webkit-keyframes shake {
+    10%, 90% {
+      -webkit-transform: translate3d(0, 0px, 0) rotate(0deg);
+      transform: translate3d(0, 0px, 0) rotate(0deg);
+    }
+    20%, 80% {
+      -webkit-transform: translate3d(0, -2px, 0) rotate(5deg);
+      transform: translate3d(0, -2px, 0) rotate(5deg);
+    }
+    30%, 50%, 70% {
+      -webkit-transform: translate3d(0, 0px, 0) rotate(0deg);
+      transform: translate3d(0, 0px, 0) rotate(0deg);
+    }
+    40%, 60% {
+      -webkit-transform: translate3d(0, -2px, 0) rotate(-5deg);
+      transform: translate3d(0, -2px, 0) rotate(-5deg);
+    }
+  }
+  @keyframes shake {
+    10%, 90% {
+      -webkit-transform: translate3d(0, 0px, 0) rotate(0deg);
+      transform: translate3d(0, 0px, 0) rotate(0deg);
+    }
+    20%, 80% {
+      -webkit-transform: translate3d(0, -2px, 0) rotate(5deg);
+      transform: translate3d(0, -2px, 0) rotate(5deg);
+    }
+    30%, 50%, 70% {
+      -webkit-transform: translate3d(0, 0px, 0) rotate(0deg);
+      transform: translate3d(0, 0px, 0) rotate(0deg);
+    }
+    40%, 60% {
+      -webkit-transform: translate3d(0, -2px, 0) rotate(-5deg);
+      transform: translate3d(0, -2px, 0) rotate(-5deg);
+    }
+  }

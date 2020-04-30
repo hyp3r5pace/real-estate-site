@@ -13,7 +13,7 @@ html(lang='en')
         h1#title.text-center Search
         p#description.description.text-center
           | Search the home of your dreams!
-      form#survey-form(action='/signIn/search', method='POST')
+      form#survey-form(action='/signIn/search?cid=#{id}', method='POST')
         h2(style='color: red') #{error}
         .form-group
           label#name-label(for='city') City

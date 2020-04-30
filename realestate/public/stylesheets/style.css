@@ -53,13 +53,11 @@ button {
 }
 
 .btn-3{
-   color: #3498db;
+   color: white;
    transition: 0.8s;
 }
 
-.btn-3:hover{
-  color: red;
-}
+
 
 .btn::before{
   content: "";
@@ -83,6 +81,7 @@ button {
   border: #f50;
   cursor: pointer;
   transition: all 0.5s;
+  color: whitesmoke;
 }
 
 .btn-2 span {

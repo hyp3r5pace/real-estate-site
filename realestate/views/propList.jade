@@ -4,6 +4,9 @@ html(lang='en')
     meta(charset='UTF-8')
     title Property List
     link(rel='stylesheet', href='/stylesheets/prop-list-style.css')
+    link(href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', rel='stylesheet')
+    link(rel='stylesheet', href='/stylesheets/likeButton.css')
+
   body
     // partial:index.partial.html  https://picsum.photos/500/300/?image=10
     .main
@@ -18,9 +21,16 @@ html(lang='en')
                         .card_content
                             h2.card_title #{pip.House_Name}
                             p.card_text #{pip.no_of_rooms} BHK
+                              a(href='/signIn/interested?id=#{pip.propertyId}&cid=#{customerid}')
+                                if pip.indicator 
+                                  i.like-button.fa.fa-2x.fa-heart.liked
+                                else
+                                  i.like-button.fa.fa-2x.fa-heart-o.not-liked
                             p.card_text Price: #{pip.Cost}
-                            a(href='/signIn/readMore?id=#{pip.PropertyId}')
+                            a(href='/signIn/readMore?id=#{pip.propertyId}&cid=#{customerid}')
                                 button.btn.card_btn Find Out More
              else 
                 h2 No such property exist
+    script(src='/javascripts/likebutton.js')
+
     // partial

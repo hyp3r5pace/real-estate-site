@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title  Image upload 
+    link(rel='stylesheet', href='/stylesheets/imageupload-style.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lora|Poppins:600,700')
+    link(rel='stylesheet', href='https://pro.fontawesome.com/releases/v5.2.0/css/all.css')
+    link(rel='stylesheet', href='https://sass-template.calvinong.dev/css/common.css')
+
+  body
+    .contain
+      .imag
+        img#blah(src='https://picsum.photos/400/300', alt='Preview Image')
+    .wrapper
+      form(action='/upload/image', method='POST', enctype='multipart/form-data')
+        input#file(type='file', name='pic', onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])")
+        label.btn-2(for='file') Pick Image
+        button.btn-4(type='submit') Upload
+        h4(style='color:red') #{error}
+        h4(style='color:green') #{success}

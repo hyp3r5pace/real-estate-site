@@ -13,12 +13,12 @@ html(lang='en')
             img(src='https://a-v2.sndcdn.com/assets/images/header/cloud-e365a4.png', alt='soundcloud logo', height='20px', width='auto')
             img(src='https://a-v2.sndcdn.com/assets/images/header/wordmark-d95b0a.png', alt='')
           .login
-            button.btn.btn-3
-              span
-                a(href='signIn', target='_self') Sign in
-            button.btn-2
-              span
-                a(href='signUp', target='_self') Create account
+            a(href='signIn', target='_self')
+              button.btn.btn-3
+                span Sign in
+            a(href='signUp', target='_self')      
+              button.btn-2
+                span Create account
         section.hero-container
           .text-block
             h1.header1 Home Sweet Home

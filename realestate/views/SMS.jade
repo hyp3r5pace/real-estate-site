@@ -1,0 +1,20 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Forgot Password
+    link(rel='stylesheet', href='/stylesheets/forgot-password.css')
+  body.align
+    // partial:index.partial.html
+    .grid
+      form.form.login(action='/getpasswdBySMS', method='post')
+        header.login__header
+          h3.login__title Get Password
+        .login__body
+          h4.error(style='color:red') #{error}
+          .form__field
+            input(type='number', placeholder='Mobile Number (With country code)', name='mobile', required='')
+            a.forgot-password(href='/forgotPassword') Send Email instead?
+        footer.login__footer
+          input(type='submit', value='Send Password')
+    // partial

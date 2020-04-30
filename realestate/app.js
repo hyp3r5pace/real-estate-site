@@ -19,7 +19,8 @@ var signUp = require('./routes/signUp');
 var search = require('./routes/search');
 var forgot = require('./routes/forgotPasswd');
 var send   = require('./routes/sendEmail');
-
+var upload = require('./routes/upload');
+var sendSMS = require('./routes/sendSMS');
 var app = express();
 
 // view engine setup
@@ -27,7 +28,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 //Handle File Uploads --- eg: where to upload the images.
-app.set(multer({dest: './uploads'}));
+//app.set(multer({dest: './uploads'}));
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -78,6 +79,8 @@ app.use('/signIn',signIn);
 app.use('/signUp',signUp);
 app.use('/forgotPassword',forgot);
 app.use('/getpasswd',send);
+app.use('/upload',upload);
+app.use('/getpasswdBySMS',sendSMS);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -94,10 +97,12 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   if(err.status!==404 && err.status!==500)
   res.render('error');
+  
   if(err.status===404)
   {
     res.render('error404');
   }
+  
 
   if(err.status===500) {
     res.render('error500');

@@ -6,10 +6,12 @@ const {check, validationResult} = require('express-validator');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('signIn-signUp');
+  res.render('signIn-signUp',{
+      "session": "right-panel-active"
+  });
 });
 
-router.post('/register',[check('Email').isEmail().withMessage('Not a valid Email'),check('Password').isLength({min: 6}).withMessage('Password Must be at least 5 char long'),check("Password2", "invalid password")
+router.post('/register',[check('Email').isEmail().withMessage('Not a valid Email'),check('mobile').isLength({min: 10}).withMessage('Invalid Mobile Number!'),check('Password').isLength({min: 6}).withMessage('Password Must be at least 5 char long'),check("Password2", "invalid password")
 .custom((value,{req, loc, path}) => {
     if (value !== req.body.Password) {
         // trow error if passwords do not match
@@ -20,6 +22,7 @@ router.post('/register',[check('Email').isEmail().withMessage('Not a valid Email
 })],function(req,res,next){
     var name = req.body.Name;
     var email = req.body.Email;
+    var mobile = req.body.mobile;
     var password = req.body.Password;
     var password2 = req.body.Password2;
 
@@ -31,7 +34,8 @@ router.post('/register',[check('Email').isEmail().withMessage('Not a valid Email
 
     if(!errors.isEmpty()) {
         res.render('signIn-signUp',{
-            'error1': errors.errors[0].msg + ". Please signUp again!!"
+            'error1': errors.errors[0].msg + ". Please signUp again!!",
+            "session": "right-panel-active"
         });
     } else {
         var id = 0;
@@ -39,7 +43,8 @@ router.post('/register',[check('Email').isEmail().withMessage('Not a valid Email
             if(error) {
                 console.log("Database error: ",error);
                 res.render('signIn-signUp',{
-                    'error1': "database error: " + error + "please sign up again!"
+                    'error1': "database error: " + error + "please sign up again!",
+                    "session": "right-panel-active"
                 });
             } else {
                     id = rows[0].C_Id;
@@ -48,7 +53,8 @@ router.post('/register',[check('Email').isEmail().withMessage('Not a valid Email
                         if(err) {
                             console.log("Database error: ",error);
                             res.render('signIn-signUp',{
-                                'error1': "Database error: " + error + "Please sign up again!!"
+                                'error1': "Database error: " + error + "Please sign up again!!",
+                                "session": "right-panel-active"
                             });
                         } else {
                             console.log(row1.length);
@@ -60,11 +66,12 @@ router.post('/register',[check('Email').isEmail().withMessage('Not a valid Email
                             } else {
                                 console.log("Reigistering the user");
                                 var t = id + 1;
-                                pool.query("insert into customer(C_Name,C_Email_Id,C_Password,C_Id) values ('" + name +"','" + email + "','" + password + "','" + t + "')",function(erro,rows){
+                                pool.query("insert into customer(C_Name,C_Email_Id,C_Password,C_Id,C_Mobile_No) values ('" + name +"','" + email + "','" + password + "'," + t + "," + mobile + ")",function(erro,rows){
                                     if(erro) {
                                         console.log("Database error: ",error);
                                         res.render('signIn-signUp',{
-                                            'error1': "Database error: " + error + "Please sign up again!!"
+                                            'error1': "Database error: " + error + "Please sign up again!!",
+                                            "session": "right-panel-active"
                                         });
                                     } else {
                                         console.log("Registration successful!!!");

@@ -7,7 +7,7 @@ html(lang='en')
     link(rel='stylesheet', href='/stylesheets/signIn-signUp-style.css')
   body
     // partial:index.partial.html
-    #container.container
+    #container.container(class="#{session}")
       #Sign-up.form-container.sign-up-container
         form#signup(action='/signUp/register', method='POST')
           h1.account Create Account
@@ -15,6 +15,7 @@ html(lang='en')
           br
           input(type='text', placeholder='Name', name='Name', required='')
           input(type='email', placeholder='Email', name='Email', required='')
+          input(type='number', placeholder='Mobile Number (With your country code)', name='mobile', required='')
           input(type='password', placeholder='Password', name='Password', required='')
           input(type='password', placeholder='Confirm Password', name='Password2', required='')
           button.signup(type='submit') Sign Up
@@ -35,6 +36,8 @@ html(lang='en')
             h1 Welcome Back!
             p To keep connected with us please login with your personal info
             button#signIn.ghost Sign In
+            h4(style='color:red') #{error1}
+            h4(style='color: green') #{success1}
           .overlay-panel.overlay-right
             h1 Hello, Friend!
             p Enter your personal details and start journey with us

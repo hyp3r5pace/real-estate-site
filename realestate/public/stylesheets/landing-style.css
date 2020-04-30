@@ -103,12 +103,12 @@ a.cta:hover:before {
   position: absolute;
 }
 .container .one-half.left, .container .one-half.right {
-  -webkit-transition: 500ms all ease-in-out;
-  transition: 500ms all ease-in-out;
+  -webkit-transition: 0.8s all ease-in-out;
+  transition: 0.8s all ease-in-out;
 }
 .container .one-half.left:before, .container .one-half.right:before {
-  -webkit-transition: 500ms all ease-in-out;
-  transition: 500ms all ease-in-out;
+  -webkit-transition: 0.8s all ease-in-out;
+  transition: 0.8s all ease-in-out;
 }
 .container.left-is-hovered .left {
   width: 85%;

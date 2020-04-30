@@ -4,7 +4,9 @@ html(lang='en')
     meta(charset='UTF-8')
     title Description of property
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
     link(rel='stylesheet', href='/stylesheets/description-style.css')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js')
   body
     // partial:index.partial.html
     .parallax.bg-1
@@ -12,21 +14,40 @@ html(lang='en')
     .scrolled
       .container
         h1 #{house}
-        .Description
-          h4 Description
-          p #{description}
-          br
-          .contain
-            h5.price
-              | Price:   
-              span.price-value #{cost}
-          h5.location
-            | Location:   
-            span.location-value #{street}, #{city}
-          h5.agentinfo Agent Contact info:
-          h6.contact-info
-          h6.email Name: #{name}
-          h6.phone Phone Number:   #{phone}
-          h6.email Email: #{email}
-          a
+        .comments
+          .description
+              p.description
+                span DESCRIPTION   
+                |  :   #{description}
+          .cost
+              p.cost
+                span COST
+                |   :    #{cost}
+          .street
+              p.street
+                span STREET
+                |  :    #{street}
+          .city 
+              p.city
+                span CITY
+                |   : #{city}
+        .headline
+            h3 AGENT
+              br
+              span.info INFORMATION
+        .comments 
+          .name
+              p.name 
+                span NAME
+                |  :  #{name}
+          .phone
+              p.phone
+                span MOBILE NO
+                |   : #{phone}
+          .email
+              p.email
+                span EMAIL
+                |   : #{email}
+
+      
     // partial
